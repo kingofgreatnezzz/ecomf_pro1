@@ -3,24 +3,20 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/common/Footer";
-
-
-
-
-
+import Header from "./components/common/Header";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
+    <div>
+      <Router>
+        <Navbar />
 
-      
-      <Routes>
-        <Route path="/" element={<Home />}/>
-    
-      </Routes>
-     <Footer/>
-    </Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
