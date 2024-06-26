@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import { BsBox2Heart } from "react-icons/bs";
 import { GiSmartphone } from "react-icons/gi";
 import { PiTelevisionBold } from "react-icons/pi";
-
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { MdOutlineSmartToy } from "react-icons/md";
 import { IoRoseOutline } from "react-icons/io5";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaComputer } from "react-icons/fa6";
 import { GiSelfLove } from "react-icons/gi";
-
 import { GiCrenelCrown } from "react-icons/gi";
-import { Bar, Notification, Cart, Close } from "../../services/svgs";
+import { Bar, Notification, Cart, Close } from "../../../services/svgs";
 
 export default function Header() {
   const [isopen, setIsopen] = useState(false);
@@ -25,7 +23,7 @@ export default function Header() {
       x: 0,
       transition: {
         type: "spring",
-        siffness: 300,
+        stiffness: 300,
         damping: 30,
       },
     },
@@ -40,14 +38,14 @@ export default function Header() {
   };
 
   return (
-    <div className="relative mx-auto bg-slate-300  shadow-slate-400 shadow-lg">
+    <div className="relative bg-slate-100 shadow-slate-300 shadow-lg rounded-sm">
       <nav className="flex items-center justify-between p-5">
         <div>
           <GiCrenelCrown size={28} className="text-slate-900" />
         </div>
 
         <div className="hidden md:block">
-          <ul className="flex gap-12 text-stone-700 text-justify pr-5">
+          <ul className="flex gap-12 text-stone-800 text-justify pr-5">
             <li className="border-r-stone-400 border-r-2">
               <p className="relative inline-block pr-4 transition ease-in-out delay-110 hover:text-black hover:-translate-y-1 hover:scale-110 hover:font-bold before:absolute before:left-0 before:right-3 before:bottom-0 before:h-[2px] before:bg-black before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100">
                 Home
@@ -73,24 +71,24 @@ export default function Header() {
 
         {/* mobile view */}
         <div className="md:hidden flex">
-          <div className="flex items-center text-black bg-slate-300 space-x-3">
+          <div className="flex items-center text-stone-800 bg-slate-100 space-x-3">
             <Cart />
             <Notification />
 
-            <button onClick={toggleMenu} className="bg-slate-300">
-              {isopen ? <Close /> : <Bar />}
-            </button>
+            <button onClick={toggleMenu}>{isopen ? <Close /> : <Bar />}</button>
           </div>
           {isopen && (
-            <div className="fixed inset-0 flex justify-end backdrop-blur-md">
+            <div className="fixed inset-0 flex justify-end backdrop-blur-md z-10">
+              {" "}
+              {/* Added z-index */}
               <motion.div
                 initial={{ x: "100%" }}
                 animate={isopen ? "open" : "closed"}
                 variants={sidebarvarients}
-                className="w-[70%] bg-slate-300 items-start flex flex-col p-4"
+                className="w-[70%] bg-slate-200 opacity-80 items-start flex flex-col p-4"
               >
                 <button
-                  className="self-end mb-4 bg-slate-300"
+                  className="self-end mb-4 bg-slate-200"
                   onClick={toggleMenu}
                 >
                   <Close />
@@ -102,35 +100,35 @@ export default function Header() {
                     Orders
                   </li>
                   <li className="flex gap-2 items-center">
-                    <GiSelfLove className="h-5 w-5 " />
+                    <GiSelfLove className="h-5 w-5" />
                     Saved Items
                   </li>
                   <hr className="bg-gray-800 w-56" />
                   <p className="font-bold">Our Categories</p>
 
                   <li className="flex gap-2 items-center">
-                    <GiSmartphone className="h-5 w-5 " />
+                    <GiSmartphone className="h-5 w-5" />
                     Phone & Tablets
                   </li>
                   <li className="flex gap-2 items-center">
-                    <MdOutlineSmartToy className="h-5 w-5 " />
+                    <MdOutlineSmartToy className="h-5 w-5" />
                     Appliances
                   </li>
                   <li className="flex gap-2 items-center">
-                    <PiTelevisionBold className="h-5 w-5 " />
+                    <PiTelevisionBold className="h-5 w-5" />
                     Electronics
                   </li>
                   <li className="flex gap-2 items-center">
-                    <IoRoseOutline className="h-5 w-5 " />
+                    <IoRoseOutline className="h-5 w-5" />
                     Health & Beauty
                   </li>
                   <li className="flex gap-2 items-center">
-                    <FaComputer className="h-5 w-5 " />
+                    <FaComputer className="h-5 w-5" />
                     Computing
                   </li>
 
                   <li className="flex gap-2 items-center">
-                    <HiOutlineBuildingOffice2 className="h-5 w-5 " />
+                    <HiOutlineBuildingOffice2 className="h-5 w-5" />
                     Home & Office
                   </li>
 
@@ -138,7 +136,7 @@ export default function Header() {
                   <p className="font-bold">Our Service</p>
                   <li className="flex gap-2 items-center">Sell on Modex</li>
                   <li className="flex gap-2 items-center">Contact Us</li>
-                  <li className="flex gap-2 items-center">Help </li>
+                  <li className="flex gap-2 items-center">Help</li>
                 </ul>
               </motion.div>
             </div>
