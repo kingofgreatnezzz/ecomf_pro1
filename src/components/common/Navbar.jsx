@@ -1,22 +1,17 @@
 import React, { useState } from "react";
-import { IoMdClose } from "react-icons/io";
 import { BsBox2Heart } from "react-icons/bs";
-import { FaBarsStaggered } from "react-icons/fa6";
 import { GiSmartphone } from "react-icons/gi";
-import { FaRegBell } from "react-icons/fa";
-
-import { MdOutlineShoppingCart } from "react-icons/md";
 import { PiTelevisionBold } from "react-icons/pi";
 
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { MdOutlineSmartToy } from "react-icons/md";
-
 import { IoRoseOutline } from "react-icons/io5";
 import { animate, motion } from "framer-motion";
 import { FaComputer } from "react-icons/fa6";
 import { GiSelfLove } from "react-icons/gi";
 
 import { GiCrenelCrown } from "react-icons/gi";
+import { Bar, Notification, Cart, Close } from "../../services/svgs";
 
 export default function Header() {
   const [isopen, setIsopen] = useState(false);
@@ -45,7 +40,7 @@ export default function Header() {
   };
 
   return (
-    <div className="relative mx-auto bg-slate-300">
+    <div className="relative mx-auto bg-slate-300  shadow-slate-400 shadow-lg">
       <nav className="flex items-center justify-between p-5">
         <div>
           <GiCrenelCrown size={28} className="text-slate-900" />
@@ -77,22 +72,15 @@ export default function Header() {
         </div>
 
         {/* mobile view */}
-        <div className="md:hidden">
-          <button onClick={toggleMenu}>
-            {isopen ? (
-              <IoMdClose />
-            ) : (
-              <div className="flex  text-black gap-x-2 items-center">
-                <MdOutlineShoppingCart size={23} />
-                <div className="flex">
-                  <FaRegBell className="relative" size={22} />
-                  <span class="absolute  inline-flex rounded-full h-2 w-2 bg-red-700"></span>
-                </div>
-                <FaBarsStaggered size={22} />
-              </div>
-            )}
-          </button>
+        <div className="md:hidden flex">
+          <div className="flex items-center text-black bg-slate-300 space-x-3">
+            <Cart />
+            <Notification />
 
+            <button onClick={toggleMenu} className="bg-slate-300">
+              {isopen ? <Close /> : <Bar />}
+            </button>
+          </div>
           {isopen && (
             <div className="fixed inset-0 flex justify-end backdrop-blur-md">
               <motion.div
@@ -101,8 +89,11 @@ export default function Header() {
                 variants={sidebarvarients}
                 className="w-[70%] bg-slate-300 items-start flex flex-col p-4"
               >
-                <button className="self-end mb-4" onClick={toggleMenu}>
-                  <IoMdClose className="animate-spin-slow" size={24} />
+                <button
+                  className="self-end mb-4 bg-slate-300"
+                  onClick={toggleMenu}
+                >
+                  <Close />
                 </button>
 
                 <ul className="flex flex-col gap-y-3">
@@ -147,6 +138,7 @@ export default function Header() {
                   <p className="font-bold">Our Service</p>
                   <li className="flex gap-2 items-center">Sell on Modex</li>
                   <li className="flex gap-2 items-center">Contact Us</li>
+                  <li className="flex gap-2 items-center">Help </li>
                 </ul>
               </motion.div>
             </div>
