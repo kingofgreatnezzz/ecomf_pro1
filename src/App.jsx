@@ -9,7 +9,6 @@ function App() {
     <div className="bg-slate-100">
       <Router>
         <Navbar  />
-
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

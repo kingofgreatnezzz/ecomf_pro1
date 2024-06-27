@@ -38,7 +38,7 @@ export default function Header() {
   };
 
   return (
-    <div className="relative bg-slate-100 shadow-slate-300 shadow-lg rounded-sm">
+    <div className="relative top-0 z-10 bg-slate-100 shadow-slate-300 shadow-lg rounded-sm">
       <nav className="flex items-center justify-between p-5">
         <div>
           <GiCrenelCrown size={28} className="text-slate-900" />
@@ -78,8 +78,7 @@ export default function Header() {
             <button onClick={toggleMenu}>{isopen ? <Close /> : <Bar />}</button>
           </div>
           {isopen && (
-            <div className="fixed inset-0 flex justify-end backdrop-blur-md z-10">
-              {" "}
+            <div className="fixed inset-0 flex justify-end backdrop-blur-md z-20">          
               {/* Added z-index */}
               <motion.div
                 initial={{ x: "100%" }}

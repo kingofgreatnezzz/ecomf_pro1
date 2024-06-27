@@ -22,28 +22,32 @@ export default function Hero() {
       <div className="bg-slate-100 h-auto md:h-64 m-2 shadow-md overflow-hidden">
         <Slider {...settings}>
           <div className="mt-2">
-            <img src={images.banners.bannerImg1} alt="slide1" />
+            <img src={images.images.bannerImg1} alt="slide1" />
           </div>
           <div className="mt-1">
-            <img src={images.banners.bannerImg4} alt="slide2" className="w-full" />
+            <img
+              src={images.images.bannerImg4}
+              alt="slide2"
+              className="w-full"
+            />
           </div>
           <div className="mt-2 flex justify-center items-center">
-            <img src={images.banners.bannermain} width={850} alt="slider3" />
+            <img src={images.images.bannermain} width={850} alt="slider3" />
           </div>
         </Slider>
       </div>
 
       <section className="flex flex-col md:flex-row md:space-x-20 md:justify-center items-left md:items-center text-[14px] leading-tight ml-10 space-y-2 mt-5">
         <div className="flex items-center space-x-2 md:mt-2">
-          <Deliver /> <p className=" text-stone-500">Free Drop Shipping</p>
+          <Deliver /> <p className=" text-stone-600">Free Drop Shipping</p>
         </div>
         <div className="flex items-center space-x-2">
-          <Twoo /> <p className=" text-stone-500">Two Years Guarantee </p>
+          <Twoo /> <p className=" text-stone-600">Two Years Guarantee </p>
         </div>
 
         <div className="flex items-center space-x-2">
           <Returngoods />
-          <p className=" text-stone-500">Return Policy in 30days</p>
+          <p className=" text-stone-600">Return Policy in 30days</p>
         </div>
       </section>
     </div>

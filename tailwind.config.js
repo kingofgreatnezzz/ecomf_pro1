@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        dangle: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(20px)' },
+        },
+      },
       colors: {
         clouds: "#ECF0F1",
         concrete: "#95A5A6",
@@ -19,6 +25,7 @@ export default {
         titleFont: ["Poppins", "sans-serif"],
       },
       animation:{
+           dangle: 'dangle 5s infinite ease-in-out',
         'spin-slow': 'spin 3s linear infinite',
       }
     },
