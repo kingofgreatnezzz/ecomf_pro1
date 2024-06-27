@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 
 const ProductCard = ({ id, title, details, price, image }) => {
+  const [liked, setLiked] = useState(false);
+
+  const handleLiked = () => {
+    setLiked(!liked);
+  };
   return (
     <div className="shadow-md overflow-hidden">
-      <div className="w-full h-48 md:h-64">
+      <div className="w-full h-52 md:h-64">
         <img className="w-full h-full object-cover" src={image} alt={title} />
       </div>
       <div className="p-4 backdrop-blur-sm">
@@ -13,13 +18,17 @@ const ProductCard = ({ id, title, details, price, image }) => {
         <p className="text-sm md:text-base text-gray-700">{details}</p>
         <p className="text-base md:text-lg font-semibold">{price}</p>
 
-        <a
-          href="#"
-          className="flex justify-center items-center w-full bg-slate-600 hover:bg-slate-700 p-2 mt-2 text-white transition"
+        <button
+          onClick={handleLiked}
+          className="flex justify-center items-center w-full bg-zinc-900 hover:bg-zinc-700 p-2 mt-2 text-white transition"
         >
-          <CiHeart className="h-6 w-6 mr-2" />
+          {liked ? (
+            <FaHeart className="h-6 w-6 mr-2" />
+          ) : (
+            <CiHeart className="h-6 w-6 mr-2" />
+          )}
           <span>Add to Cart</span>
-        </a>
+        </button>
       </div>
     </div>
   );
