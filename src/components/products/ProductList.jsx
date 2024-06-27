@@ -11,7 +11,7 @@ export default function ProductList() {
       <div className="container mx-auto px-3 py-16 bg-transparent ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-transparent">
           {data.products.map((product) => (
-            <div key={product.id} className="outline outline-[1.5px]  shadow-lg ">
+            <div key={product.id} className="outline outline-[1.5px] shadow-lg ">
               <ProductCard
                 id={product.id}
                 title={product.title}
