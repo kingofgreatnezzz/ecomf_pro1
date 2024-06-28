@@ -27,12 +27,16 @@ export default function ProductDetail() {
       </div>
 
       <div className="w-full md:w-1/2 lg:w-2/3 flex flex-col justify-center space-y-4 pt-8">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">{product.title}</h1>
-        <p className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-800">{product.price}</p>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl text-stone-950 font-bold">
+          {product.title}
+        </h1>
+        <p className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-800">
+          {product.price}
+        </p>
         <p className="text-gray-700 text-base md:text-lg">{product.details}</p>
         <button
           onClick={handleLiked}
-          className="flex justify-center items-center w-full bg-zinc-900 hover:bg-zinc-700 p-3 mt-4 text-white transition "
+          className="flex justify-center items-center w-full bg-zinc-900 hover:bg-zinc-700 p-3 mt-4 text-white transition"
         >
           {liked ? (
             <FaHeart className="h-6 w-6 mr-2" />

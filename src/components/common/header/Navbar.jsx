@@ -38,7 +38,7 @@ export default function Header() {
   };
 
   return (
-    <div className="relative top-0 z-10 bg-slate-100 shadow-slate-300 shadow-lg rounded-sm">
+    <div className="relative  z-10 bg-slate-100 shadow-slate-300 shadow-lg rounded-sm">
       <nav className="flex items-center justify-between p-5">
         <div>
           <GiCrenelCrown size={28} className="text-slate-900" />
@@ -84,16 +84,16 @@ export default function Header() {
                 initial={{ x: "100%" }}
                 animate={isopen ? "open" : "closed"}
                 variants={sidebarvarients}
-                className="w-[70%] bg-slate-200 opacity-80 items-start flex flex-col p-4"
+                className="w-[70%] bg-slate-200 opacity-85 items-start flex flex-col p-4"
               >
                 <button
-                  className="self-end mb-4 bg-slate-200"
+                  className="self-end mb-4 bg-slate-200 "
                   onClick={toggleMenu}
                 >
                   <Close />
                 </button>
 
-                <ul className="flex flex-col gap-y-3">
+                <ul className="flex flex-col gap-y-3 text-stone-950">
                   <li className="flex gap-2 items-center">
                     <BsBox2Heart className="h-5 w-5" />
                     Orders
