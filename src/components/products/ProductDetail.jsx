@@ -39,9 +39,9 @@ export default function ProductDetail() {
           className="flex justify-center items-center w-full bg-zinc-900 hover:bg-zinc-700 p-3 mt-4 text-white transition"
         >
           {liked ? (
-            <FaHeart className="h-6 w-6 mr-2" />
+            <FaHeart className="h-6 w-6 mr-2"/>
           ) : (
-            <CiHeart className="h-6 w-6 mr-2" />
+            <CiHeart className="h-6 w-6 mr-2"/>
           )}
           <span>Add to Cart</span>
         </button>

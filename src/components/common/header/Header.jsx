@@ -2,8 +2,10 @@ import React from "react";
 import { FiSearch } from "react-icons/fi";
 
 import { FaUser } from "react-icons/fa6";
+
 import { GiLoveMystery } from "react-icons/gi";
 import { IoCartSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -18,10 +20,13 @@ export default function Header() {
 
         <div className="hidden md:block">
           <div className="flex space-x-4 items-center justify-center text-stone-900">
-            <div className="relaive">
-              <IoCartSharp className=" absolute h-7 w-7 animate-ping" />
-              <IoCartSharp className="h-7 w-7" />
-            </div>
+            <Link to={"/cart"}>
+              <div className="relaive">
+                <IoCartSharp className=" absolute h-7 w-7 animate-ping" />
+                <IoCartSharp className="h-7 w-7" />
+              </div>
+            </Link>
+
             <GiLoveMystery className="h-7 w-7 mt-1" />
             <FaUser className="h-5 w-5 mt-1" />
           </div>

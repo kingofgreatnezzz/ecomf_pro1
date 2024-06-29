@@ -11,7 +11,7 @@ const ProductCard = ({ id, title, details, price, image }) => {
   return (
     <div className="shadow-md overflow-hidden">
       <div className="w-full h-52 md:h-64">
-        <img className="w-full h-full object-cover" src={image} alt={title} />
+        <img className="w-full h-full object-cover" src={image} alt={title}/>
       </div>
       <div className="p-4 backdrop-blur-sm">
         <h2 className="text-lg md:text-xl font-bold">{title}</h2>

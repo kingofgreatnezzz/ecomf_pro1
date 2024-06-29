@@ -10,6 +10,7 @@ import { FaComputer } from "react-icons/fa6";
 import { GiSelfLove } from "react-icons/gi";
 import { GiCrenelCrown } from "react-icons/gi";
 import { Bar, Notification, Cart, Close } from "../../../services/svgs";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isopen, setIsopen] = useState(false);
@@ -38,7 +39,7 @@ export default function Header() {
   };
 
   return (
-    <div className="relative  z-10 bg-slate-100 shadow-slate-300 shadow-lg rounded-sm">
+    <div className="relative z-10 bg-slate-100 shadow-slate-300 shadow-lg rounded-sm">
       <nav className="flex items-center justify-between p-5">
         <div>
           <GiCrenelCrown size={28} className="text-slate-900" />
@@ -72,7 +73,7 @@ export default function Header() {
         {/* mobile view */}
         <div className="md:hidden flex">
           <div className="flex items-center text-stone-800 bg-slate-100 space-x-3">
-            <Cart />
+           <Link to={'/cart'}><Cart /></Link>
             <Notification />
 
             <button onClick={toggleMenu}>{isopen ? <Close /> : <Bar />}</button>

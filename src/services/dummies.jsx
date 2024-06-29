@@ -13,6 +13,7 @@ import product9 from '/assets/images/products/product9.jpg';
 import product10 from '/assets/images/products/product10.jpg';
 import product11 from '/assets/images/products/product11.png';
 import payment from '/assets/payment.png'
+import emptyCart from '/assets/images/emptyCart.png'
 
 const products = [
   { id: 3, title: 'Product 3', details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.', price: '$30', image: product3 },
@@ -44,6 +45,7 @@ const images = {
   product10,
   product11,
   payment,
+  emptyCart
 
 };
 
