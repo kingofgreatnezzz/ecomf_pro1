@@ -6,7 +6,7 @@ import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { MdOutlineSmartToy } from "react-icons/md";
 import { IoRoseOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
-import { FaComputer } from "react-icons/fa6";
+import { FaComputer, FaUser } from "react-icons/fa6";
 import { GiSelfLove } from "react-icons/gi";
 import { GiCrenelCrown } from "react-icons/gi";
 import { Bar, Notification, Cart, Close } from "../../../services/svgs";
@@ -17,6 +17,10 @@ export default function Header() {
 
   const toggleMenu = () => {
     setIsopen(!isopen);
+  };
+
+  const closeMenu = () => {
+    setIsopen(false);
   };
 
   const sidebarvarients = {
@@ -42,31 +46,43 @@ export default function Header() {
     <div className="relative pb-16 md:pb-20">
       <nav className="fixed top-0 w-full z-10 bg-slate-100 shadow-slate-300 shadow-lg rounded-sm">
         <div className="flex items-center justify-between p-5">
-          <div>
+          <Link to={"/"}>
             <GiCrenelCrown size={28} className="text-slate-900" />
-          </div>
+          </Link>
 
           <div className="hidden md:block">
             <ul className="flex gap-12 text-stone-800 text-justify pr-5">
               <li className="border-r-stone-400 border-r-2">
-                <p className="relative inline-block pr-4 transition ease-in-out delay-110 hover:text-black hover:-translate-y-1 hover:scale-110 hover:font-bold before:absolute before:left-0 before:right-3 before:bottom-0 before:h-[2px] before:bg-black before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100">
+                <Link
+                  to={"/"}
+                  className="relative inline-block pr-4 transition ease-in-out delay-110 hover:text-black hover:-translate-y-1 hover:scale-110 hover:font-bold before:absolute before:left-0 before:right-3 before:bottom-0 before:h-[2px] before:bg-black before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100"
+                >
                   Home
-                </p>
+                </Link>
               </li>
               <li className="border-r-stone-400 border-r-2">
-                <p className="relative inline-block pr-4 transition ease-in-out delay-110 hover:text-black hover:-translate-y-1 hover:scale-110 hover:font-bold before:absolute before:left-0 before:right-3 before:bottom-0 before:h-[2px] before:bg-black before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100">
+                <Link
+                  to={"/"}
+                  className="relative inline-block pr-4 transition ease-in-out delay-110 hover:text-black hover:-translate-y-1 hover:scale-110 hover:font-bold before:absolute before:left-0 before:right-3 before:bottom-0 before:h-[2px] before:bg-black before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100"
+                >
                   Shop
-                </p>
+                </Link>
               </li>
               <li className="border-r-stone-400 border-r-2">
-                <p className="relative inline-block pr-4 transition ease-in-out delay-110 hover:text-black hover:-translate-y-1 hover:scale-110 hover:font-bold before:absolute before:left-0 before:right-3 before:bottom-0 before:h-[2px] before:bg-black before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100">
+                <Link
+                  to={"/about"}
+                  className="relative inline-block pr-4 transition ease-in-out delay-110 hover:text-black hover:-translate-y-1 hover:scale-110 hover:font-bold before:absolute before:left-0 before:right-3 before:bottom-0 before:h-[2px] before:bg-black before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100"
+                >
                   About
-                </p>
+                </Link>
               </li>
               <li className="border-r-stone-400">
-                <p className="relative inline-block pr-4 transition ease-in-out delay-110 hover:text-black hover:-translate-y-1 hover:scale-110 hover:font-bold before:absolute before:left-0 before:right-3 before:bottom-0 before:h-[2px] before:bg-black before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100">
+                <Link
+                  to={"/journal"}
+                  className="relative inline-block pr-4 transition ease-in-out delay-110 hover:text-black hover:-translate-y-1 hover:scale-110 hover:font-bold before:absolute before:left-0 before:right-3 before:bottom-0 before:h-[2px] before:bg-black before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100"
+                >
                   Journal
-                </p>
+                </Link>
               </li>
             </ul>
           </div>
@@ -77,71 +93,90 @@ export default function Header() {
               <Link to={"/cart"}>
                 <Cart />
               </Link>
-              <Notification />
+              <Link to={"/notification"}>
+                <Notification />
+              </Link>
 
               <button onClick={toggleMenu}>
                 {isopen ? <Close /> : <Bar />}
               </button>
             </div>
             {isopen && (
-              <div className="fixed inset-0 flex justify-end backdrop-blur-md z-20">
-                {/* Added z-index */}
+              <div
+                className="fixed inset-0 flex justify-end backdrop-blur-md z-20"
+                onClick={closeMenu} // Close menu when clicking on the backdrop
+              >
                 <motion.div
                   initial={{ x: "100%" }}
                   animate={isopen ? "open" : "closed"}
                   variants={sidebarvarients}
                   className="w-[70%] bg-slate-200 opacity-85 items-start flex flex-col p-4"
+                  onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the sidebar
                 >
                   <button
                     className="self-end mb-4 bg-slate-200 "
-                    onClick={toggleMenu}
+                    onClick={closeMenu}
                   >
                     <Close />
                   </button>
 
                   <ul className="flex flex-col gap-y-3 text-stone-950">
-                    <li className="flex gap-2 items-center">
+                    <Link
+                      to={"/login"}
+                      className="flex gap-2 items-center"
+                      onClick={closeMenu} // Close menu on click
+                    >
+                      <FaUser className="h-5 w-5" />
+                      Login
+                    </Link>
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
                       <BsBox2Heart className="h-5 w-5" />
                       Orders
                     </li>
-                    <li className="flex gap-2 items-center">
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
                       <GiSelfLove className="h-5 w-5" />
                       Saved Items
                     </li>
                     <hr className="bg-gray-800 w-56" />
                     <p className="font-bold">Our Categories</p>
 
-                    <li className="flex gap-2 items-center">
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
                       <GiSmartphone className="h-5 w-5" />
                       Phone & Tablets
                     </li>
-                    <li className="flex gap-2 items-center">
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
                       <MdOutlineSmartToy className="h-5 w-5" />
                       Appliances
                     </li>
-                    <li className="flex gap-2 items-center">
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
                       <PiTelevisionBold className="h-5 w-5" />
                       Electronics
                     </li>
-                    <li className="flex gap-2 items-center">
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
                       <IoRoseOutline className="h-5 w-5" />
                       Health & Beauty
                     </li>
-                    <li className="flex gap-2 items-center">
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
                       <FaComputer className="h-5 w-5" />
                       Computing
                     </li>
 
-                    <li className="flex gap-2 items-center">
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
                       <HiOutlineBuildingOffice2 className="h-5 w-5" />
                       Home & Office
                     </li>
 
                     <hr className="bg-gray-800 w-56" />
                     <p className="font-bold">Our Service</p>
-                    <li className="flex gap-2 items-center">Sell on Modex</li>
-                    <li className="flex gap-2 items-center">Contact Us</li>
-                    <li className="flex gap-2 items-center">Help</li>
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
+                      Sell on Modex
+                    </li>
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
+                      Contact Us
+                    </li>
+                    <li className="flex gap-2 items-center" onClick={closeMenu}>
+                      Help
+                    </li>
                   </ul>
                 </motion.div>
               </div>

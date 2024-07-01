@@ -8,6 +8,11 @@ import Cart from "./components/cart/Cart";
 import Paymentgateway from "./pages/Paymentgateway";
 import ShippingInfo from "./pages/ShippingInfo";
 import ConfirmationPage from "./pages/ConfirmationPage";
+import Notifications from "./pages/Notifications";
+import Signin from "./pages/auth/Signin";
+import Signup from "./pages/auth/Signup";
+
+
 
 function App() {
   return (
@@ -21,6 +26,10 @@ function App() {
           <Route path="/payment" element={<Paymentgateway />} />
           <Route path="/shipping" element={<ShippingInfo />} />
           <Route path="/confirmationpage" element={<ConfirmationPage />} />
+          <Route path="/notification" element={<Notifications />} />
+          {/* Authentication route*/}
+          <Route path="/login" element={<Signin/>}/>
+          <Route path="/signup" element={<Signup/>}/>
         </Routes>
         <Footer />
       </Router>

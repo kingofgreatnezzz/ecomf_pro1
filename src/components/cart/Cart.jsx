@@ -4,21 +4,24 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import images from "../../services/dummies";
 import ItemCard from "./ItemCard";
+import AnimatedBackground from "../common/AnimatedBackground";
 
 export default function Cart() {
   return (
     <div className="max-w-container mx-auto px-4">
-      <h1 className="text-2xl font-bold md:text-5xl pt-8">Cart</h1>
+    <AnimatedBackground/>
+      <h1 className="text-3xl font-bold md:text-5xl pt-8">Cart</h1>
+      <p className="text-base text-zinc-600">Please, check your Orders carefully before proceeding to checkout.</p>
 
       {data.products.length > 0 ? (
-        <div className="pb-20">
+        <div className="pb-20 relative">
           <div className="w-full h-20 hidden md:grid grid-cols-5 place-content-center px-6 text-lg  font-semibold">
             <h2 className="col-span-2">Product</h2>
             <h2>Price</h2>
             <h2>Quantity</h2>
             <h2>Sub Total</h2>
           </div>
-          <div className="mt-5">
+          <div className="mt-5 ">
             {data.products.map((item) => (
               <div key={item.id}>
                 <ItemCard
@@ -30,7 +33,7 @@ export default function Cart() {
             ))}
           </div>
 
-          <button className="py-2 px-10 bg-red-500 text-white rounded-lg font-semibold uppercase mb-4 hover:bg-red-700 duration-300">
+          <button className="py-2 px-10 bg-red-500 text-white  font-semibold uppercase mb-4 hover:bg-red-700 duration-300">
             Reset cart
           </button>
 
