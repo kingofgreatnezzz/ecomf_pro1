@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Footer from "./components/common/Footer";
 import ProductDetail from "./components/products/ProductDetail";
 import Cart from "./components/cart/Cart";
+import Paymentgateway from "./pages/Paymentgateway";
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/product/:id" element={<ProductDetail/>}/>
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="/payment" element={<Paymentgateway/>}/>
         </Routes>
         <Footer />
       </Router>
