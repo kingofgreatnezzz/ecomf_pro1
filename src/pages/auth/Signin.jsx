@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Signin() {
   return (
-    <section className=" pt-2">
+    <section className="pt-2">
       <AnimatedBackground />
       <div className="container flex items-center justify-center mt-14 px-2 mx-auto relative">
         <form className="w-full max-w-lg backdrop-blur p-2">

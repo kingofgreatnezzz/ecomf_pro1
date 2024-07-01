@@ -30,8 +30,10 @@ function App() {
 
   return (
     <>
-    {loading ? <LoadingPage /> :  <div className="bg-slate-100">
-      <Router>
+    {
+      loading ? <LoadingPage /> :  
+      <div className="bg-slate-100">
+  
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -48,7 +50,7 @@ function App() {
           <Route path="/signup" element={<Signup/>}/>
         </Routes>
         <Footer />
-      </Router>
+   
     </div>}
     
     </>
