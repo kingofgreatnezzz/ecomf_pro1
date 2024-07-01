@@ -6,20 +6,21 @@ import Footer from "./components/common/Footer";
 import ProductDetail from "./components/products/ProductDetail";
 import Cart from "./components/cart/Cart";
 import Paymentgateway from "./pages/Paymentgateway";
-
-
-
+import ShippingInfo from "./pages/ShippingInfo";
+import ConfirmationPage from "./pages/ConfirmationPage";
 
 function App() {
   return (
     <div className="bg-slate-100">
       <Router>
-        <Navbar/>
+        <Navbar />
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/product/:id" element={<ProductDetail/>}/>
-          <Route path="/cart" element={<Cart/>}/>
-          <Route path="/payment" element={<Paymentgateway/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/payment" element={<Paymentgateway />} />
+          <Route path="/shipping" element={<ShippingInfo />} />
+          <Route path="/confirmationpage" element={<ConfirmationPage />} />
         </Routes>
         <Footer />
       </Router>
