@@ -28,7 +28,9 @@ export default function Header() {
             </Link>
 
             <GiLoveMystery className="h-7 w-7 mt-1" />
-            <FaUser className="h-5 w-5 mt-1" />
+            <Link to={"/login"}>
+              <FaUser className="h-5 w-5 mt-1" />
+            </Link>
           </div>
         </div>
       </div>

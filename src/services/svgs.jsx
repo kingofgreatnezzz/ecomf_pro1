@@ -211,3 +211,9 @@ export const Email = () =>{
 </svg>
   )
 }
+
+export const ErrorPageLoading = () =>{
+  return(
+    <img width={500} height={500} src="/assets/images/error404.svg"/>
+  )
+}

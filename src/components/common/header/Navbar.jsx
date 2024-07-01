@@ -124,7 +124,7 @@ export default function Header() {
                     <Link
                       to={"/login"}
                       className="flex gap-2 items-center"
-                      onClick={closeMenu} // Close menu on click
+                      onClick={closeMenu} 
                     >
                       <FaUser className="h-5 w-5" />
                       Login

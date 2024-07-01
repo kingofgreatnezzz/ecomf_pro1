@@ -21,14 +21,16 @@ export default function SignUp() {
             </div>
 
             <h1 className="mt-3 text-3xl font-semibold text-zinc-900 capitalize sm:text-3xl pb-2 ">
-            Signup
+              Signup
             </h1>
-            <p className="text-center text-sm">Welcome to Modex Shopping, Register to have a better shopping experience</p>
+            <p className="text-center text-sm">
+              Welcome to Modex Shopping, Register to have a better shopping
+              experience
+            </p>
           </div>
           <div className="relative flex items-center mt-4">
             <span className="absolute">
-         
-            <FaUser className="ml-3 h-5 w-5 text-zinc-600"/>
+              <FaUser className="ml-3 h-5 w-5 text-zinc-600" />
             </span>
 
             <input
@@ -91,7 +93,10 @@ export default function SignUp() {
             </a>
 
             <div className="mt-6 text-center ">
-              <Link to={'/login'} className="text-base text-blue-500 hover:underline ">
+              <Link
+                to={"/login"}
+                className="text-base text-blue-500 hover:underline "
+              >
                 Have an account yet? Login
               </Link>
             </div>
