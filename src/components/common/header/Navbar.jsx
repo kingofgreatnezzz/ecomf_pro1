@@ -47,7 +47,7 @@ export default function Header() {
       <nav className="fixed top-0 w-full z-10 bg-slate-100 shadow-slate-300 shadow-lg rounded-sm">
         <div className="flex items-center justify-between p-5">
           <Link to={"/"}>
-            <GiCrenelCrown size={28} className="text-slate-900" />
+            <GiCrenelCrown size={28} className="text-zinc-950" />
           </Link>
 
           <div className="hidden md:block">
@@ -89,7 +89,7 @@ export default function Header() {
 
           {/* mobile view */}
           <div className="md:hidden flex">
-            <div className="flex items-center text-stone-800 bg-slate-100 space-x-3">
+            <div className="flex items-center text-stone-950 bg-slate-100 space-x-3">
               <Link to={"/cart"}>
                 <Cart />
               </Link>
@@ -103,14 +103,14 @@ export default function Header() {
             </div>
             {isopen && (
               <div
-                className="fixed inset-0 flex justify-end backdrop-blur-md z-20"
+                className="fixed inset-0 flex justify-end backdrop-blur z-20"
                 onClick={closeMenu} // Close menu when clicking on the backdrop
               >
                 <motion.div
                   initial={{ x: "100%" }}
                   animate={isopen ? "open" : "closed"}
                   variants={sidebarvarients}
-                  className="w-[70%] bg-slate-200 opacity-85 items-start flex flex-col p-4"
+                  className="w-[70%] bg-slate-200 opacity-75 items-start flex flex-col p-4"
                   onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the sidebar
                 >
                   <button
