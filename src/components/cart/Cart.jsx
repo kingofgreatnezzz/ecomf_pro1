@@ -11,13 +11,13 @@ export default function Cart() {
     <div className="max-w-container mx-auto px-4">
     <AnimatedBackground/>
       <h1 className="text-3xl font-bold md:text-5xl pt-8">Cart</h1>
-      <p className="text-base text-zinc-600">Please, check your Orders carefully before proceeding to checkout.</p>
+      <p className="text-base text-zinc-600 pt-2">Please, check your Orders carefully before proceeding to checkout.</p>
 
       {data.products.length > 0 ? (
         <div className="pb-20 relative">
-          <div className="w-full h-20 hidden md:grid grid-cols-5 place-content-center px-6 text-lg  font-semibold">
+          <div className="w-full h-20 hidden md:grid grid-cols-5 place-content-center px-6 font-bold text-lg text-stone-950">
             <h2 className="col-span-2">Product</h2>
-            <h2>Price</h2>
+            <h2 className="">Price</h2>
             <h2>Quantity</h2>
             <h2>Sub Total</h2>
           </div>
